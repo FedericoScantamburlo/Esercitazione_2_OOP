@@ -95,16 +95,44 @@ public:
 	}	
 };
 
+//making operators + and * commutative
+template <typename T>
+complex_number<T>
+operator+(const T& r, complex_number<T>& z)
+{
+    return z + r;
+}
+
+template <typename T>
+complex_number<T>
+operator*(const T& r, complex_number<T>& z)
+{
+	return z * r;
+}
+
 //print
-template<typename T>
+template <typename T>
 std::ostream&
 operator<<(std::ostream& os, const complex_number<T>& z) {
     if (abs(z.im()) < 1e-12)
         os << z.re();
     else if (abs(z.re()) < 1e-12)
-        os << z.im() << "i";
+		if (z.im() == 1)
+			os << "i"; 
+		else if (z.im() == -1)
+			os << "-i";
+        else 
+			os << z.im() << "i";
 	else 
-		os << z.re() << " + " << z.im() << "i"; 
+		if (z.im() == 1)
+			os << z.re() << " + i";
+		else if (z.im() == -1)
+			os << z.re() << " - i";
+		else
+			if (z.im() < 0.0)
+				os << z.re() << " - " << abs(z.im()) << "i";
+			else
+				os << z.re() << " + " << z.im() << "i"; 
 
     return os;
 }

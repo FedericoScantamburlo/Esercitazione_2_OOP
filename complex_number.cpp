@@ -24,13 +24,20 @@ int main() {
 	cout << "r1 = " << r1 << endl;
 	z1 += r1;
 	complex_number z10 = z3 + r1;
+	complex_number z10_c = r1 + z3;
 	cout << "z9 = z6 + r1 = " << z1 << endl;
-	cout << "z10 = z3 + z1 = " << z10 << endl;
+	cout << "z10 = z3 + r1 = " << z10 << endl;
+	cout << "z10 = r1 + z3 = " << z10_c << endl;
 	float r2 = 3;
 	cout << "r2 = " << r2 << endl;
 	z10 *= r2;
 	complex_number z12 = z10 * r2;
+	complex_number z12_c = r2 * z10;
 	cout << "z11 = z10 * r2 = " << z10 << endl;
 	cout << "z12 = z11 * r2 = " << z12 << endl;
+	cout << "z12 = r2 * z11 = " << z12_c << endl;
+	complex_number<float> a (0, 1);
+	complex_number<float> b (0, -1);
+	cout << "prova" << a << b << z12.coniug() << endl;
 	return 0;
 }
