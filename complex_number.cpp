@@ -36,8 +36,5 @@ int main() {
 	cout << "z11 = z10 * r2 = " << z10 << endl;
 	cout << "z12 = z11 * r2 = " << z12 << endl;
 	cout << "z12 = r2 * z11 = " << z12_c << endl;
-	complex_number<float> a (0, 1);
-	complex_number<float> b (0, -1);
-	cout << "prova" << a << b << z12.coniug() << endl;
 	return 0;
 }
